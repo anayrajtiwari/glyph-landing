@@ -53,7 +53,7 @@ export const HeroCompiler: React.FC = () => {
   };
 
   return (
-    <section className="relative min-h-[120vh] bg-[#0a0d14] grid-pattern flex flex-col items-center justify-center px-6 py-24 md:py-36 overflow-hidden border-b border-[#232a3b]">
+    <section className="relative min-h-[120vh] compiler-bg flex flex-col items-center justify-center px-6 py-24 md:py-36 overflow-hidden border-b border-[#232a3b]">
       {/* Top-Left Ambient Light Glow Sphere */}
       <motion.div
         animate={{ scale: [1, 1.2, 1], opacity: [0.25, 0.4, 0.25] }}
