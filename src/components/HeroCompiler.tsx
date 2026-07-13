@@ -6,7 +6,7 @@ import { GlyphLogo } from './GlyphLogo';
 export const HeroCompiler: React.FC = () => {
   const [step, setStep] = useState<number>(0);
   const [typedText, setTypedText] = useState('');
-  const fullCommand = 'glyph build';
+  const fullCommand = 'rzglyph build';
 
   useEffect(() => {
     const timer1 = setTimeout(() => {
@@ -85,7 +85,7 @@ export const HeroCompiler: React.FC = () => {
               <span className="w-3 h-3 rounded-full bg-emerald-500/80 inline-block" />
               <span className="ml-2 text-xs font-mono-code text-slate-400 flex items-center gap-2">
                 <TerminalIcon className="w-3.5 h-3.5 text-cyan-400" />
-                glyph-compiler v1.4.2 — compilation-pipeline
+                rzglyph-compiler v1.4.2 — compilation-pipeline
               </span>
             </div>
 
@@ -133,7 +133,7 @@ export const HeroCompiler: React.FC = () => {
                   className="space-y-4 font-mono-code text-base"
                 >
                   <div className="flex items-center gap-2 text-slate-400">
-                    <span className="text-emerald-400">dev@glyph-compiler</span>
+                    <span className="text-emerald-400">dev@rzglyph-compiler</span>
                     <span className="text-slate-600">:</span>
                     <span className="text-cyan-400">~/project</span>
                     <span className="text-slate-500">$</span>
@@ -173,7 +173,7 @@ export const HeroCompiler: React.FC = () => {
                       className="p-5 rounded bg-[#0a0d14] border border-[#232a3b] text-slate-300 space-y-2"
                     >
                       <div className="text-orange-400 font-bold text-sm"># Input Spec (docs/index.md)</div>
-                      <div className="text-slate-400">--- title: &quot;Glyph Engine&quot; ---</div>
+                      <div className="text-slate-400">--- title: &quot;rzglyph Engine&quot; ---</div>
                       <div className="text-emerald-400"># Next-Gen Compiler</div>
                       <div className="text-cyan-300">```tsx [HeaderComponent]</div>
                       <div className="text-slate-500">export function Header() &#123; ... &#125;</div>
@@ -258,7 +258,7 @@ export const HeroCompiler: React.FC = () => {
                   <div className="flex items-center justify-between border-b border-[#232a3b] pb-4">
                     <div className="flex items-center gap-3">
                       <GlyphLogo size={28} glow />
-                      <span className="font-bold text-base text-slate-100">Glyph Compiled Preview</span>
+                      <span className="font-bold text-base text-slate-100">rzglyph Compiled Preview</span>
                     </div>
                     <span className="text-xs font-mono-code text-emerald-400 flex items-center gap-1 font-semibold">
                       <Check className="w-4 h-4" /> Compiled in 7.4ms

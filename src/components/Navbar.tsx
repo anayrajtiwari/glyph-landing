@@ -22,7 +22,7 @@ export const Navbar: React.FC = () => {
           <a href="#" className="flex items-center gap-3 p-1.5 px-3 rounded-lg bg-[#121722]/80 border border-[#232a3b] hover:border-cyan-500/40 transition-all shadow-lg group">
             <GlyphLogo size={28} glow />
             <div className="flex items-center gap-2">
-              <span className="font-mono-code font-bold text-lg tracking-tight text-white group-hover:text-cyan-400 transition-colors">glyph</span>
+              <span className="font-mono-code font-bold text-lg tracking-tight text-white group-hover:text-cyan-400 transition-colors">rzglyph</span>
               <span className="text-[10px] font-mono-code uppercase px-2 py-0.5 rounded bg-cyan-950/90 border border-cyan-800/60 text-cyan-400 font-bold">
                 v1.4.2
               </span>

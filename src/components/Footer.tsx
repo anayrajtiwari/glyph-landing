@@ -11,7 +11,7 @@ export const Footer: React.FC = () => {
           <div className="space-y-2">
             <div className="flex items-center gap-3">
               <GlyphLogo size={24} />
-              <span className="font-mono-code font-bold text-slate-100 text-lg">glyph-compiler</span>
+              <span className="font-mono-code font-bold text-slate-100 text-lg">rzglyph-compiler</span>
             </div>
             <p className="text-xs text-slate-500 max-w-sm font-light">
               Deterministic Next-Generation Frontend Documentation &amp; Web Spec Compiler.
@@ -26,7 +26,7 @@ export const Footer: React.FC = () => {
         </div>
 
         <div className="flex flex-col sm:flex-row items-center justify-between border-t border-[#232a3b] pt-8 text-xs font-mono-code text-slate-500 gap-4">
-          <p>© {new Date().getFullYear()} Glyph Compiler Engine. Open-source under MIT/ISC License.</p>
+          <p>© {new Date().getFullYear()} rzglyph Compiler Engine. Open-source under MIT/ISC License.</p>
           <div className="flex items-center gap-6">
             <a href="https://github.com/google/agents-cli" target="_blank" rel="noreferrer" className="hover:text-cyan-400 transition-colors flex items-center gap-1">
               <span>GitHub</span>

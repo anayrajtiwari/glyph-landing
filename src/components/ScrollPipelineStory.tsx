@@ -10,7 +10,6 @@ export const ScrollPipelineStory: React.FC = () => {
     offset: ['start start', 'end end'],
   });
 
-  // Animated gradient laser height following scroll progress down the section
   const laserHeight = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
 
   return (
@@ -75,12 +74,10 @@ export const ScrollPipelineStory: React.FC = () => {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="relative flex flex-col md:flex-row items-center gap-8 md:gap-16"
           >
-            {/* Timeline Node Icon with Glowing Pulsing Ring */}
             <div className="absolute left-6 md:left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-[#0a0d14] border-2 border-cyan-400 flex items-center justify-center text-cyan-400 z-20 shadow-[0_0_20px_rgba(6,182,212,0.4)]">
               <FileText className="w-5 h-5 animate-pulse" />
             </div>
 
-            {/* Left Box (Text Info) */}
             <div className="w-full md:w-1/2 pl-16 md:pl-0 md:pr-12 text-left md:text-right space-y-3">
               <span className="text-xs font-mono-code text-cyan-400 font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-cyan-950/60 border border-cyan-800/40">
                 Stage 01 • Lexer Engine
@@ -91,7 +88,6 @@ export const ScrollPipelineStory: React.FC = () => {
               </p>
             </div>
 
-            {/* Right Box (Visual Code Preview) */}
             <div className="w-full md:w-1/2 pl-16 md:pl-12">
               <motion.div
                 whileHover={{ scale: 1.03, rotateY: 2 }}
@@ -106,7 +102,7 @@ export const ScrollPipelineStory: React.FC = () => {
                 </div>
                 <div className="space-y-1.5 text-slate-300">
                   <p className="text-slate-500">---</p>
-                  <p className="text-emerald-400">title: &quot;Glyph Engine&quot;</p>
+                  <p className="text-emerald-400">title: &quot;rzglyph Engine&quot;</p>
                   <p className="text-emerald-400">target: &quot;nextjs-16&quot;</p>
                   <p className="text-slate-500">---</p>
                   <p className="text-cyan-300 font-bold text-base pt-1"># Next-Gen Compiler Spec</p>
@@ -126,12 +122,10 @@ export const ScrollPipelineStory: React.FC = () => {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="relative flex flex-col md:flex-row-reverse items-center gap-8 md:gap-16"
           >
-            {/* Timeline Node Icon */}
             <div className="absolute left-6 md:left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-[#0a0d14] border-2 border-emerald-400 flex items-center justify-center text-emerald-400 z-20 shadow-[0_0_20px_rgba(16,185,129,0.4)]">
               <Code className="w-5 h-5 animate-bounce" />
             </div>
 
-            {/* Right Box (Text Info) */}
             <div className="w-full md:w-1/2 pl-16 md:pl-12 text-left space-y-3">
               <span className="text-xs font-mono-code text-emerald-400 font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-emerald-950/60 border border-emerald-800/40">
                 Stage 02 • IR Lowerer
@@ -142,7 +136,6 @@ export const ScrollPipelineStory: React.FC = () => {
               </p>
             </div>
 
-            {/* Left Box (Visual Code Preview) */}
             <div className="w-full md:w-1/2 pl-16 md:pl-0 md:pr-12">
               <motion.div
                 whileHover={{ scale: 1.03 }}
@@ -184,12 +177,10 @@ export const ScrollPipelineStory: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="relative flex flex-col md:flex-row items-center gap-8 md:gap-16"
           >
-            {/* Timeline Node Icon */}
             <div className="absolute left-6 md:left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-[#0a0d14] border-2 border-orange-400 flex items-center justify-center text-orange-400 z-20 shadow-[0_0_20px_rgba(249,115,22,0.4)]">
               <Eye className="w-5 h-5 animate-pulse" />
             </div>
 
-            {/* Left Box (Text Info) */}
             <div className="w-full md:w-1/2 pl-16 md:pl-0 md:pr-12 text-left md:text-right space-y-3">
               <span className="text-xs font-mono-code text-orange-400 font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-orange-950/60 border border-orange-800/40">
                 Stage 03 • Target Emitter
@@ -200,7 +191,6 @@ export const ScrollPipelineStory: React.FC = () => {
               </p>
             </div>
 
-            {/* Right Box (Visual Browser View) */}
             <div className="w-full md:w-1/2 pl-16 md:pl-12">
               <motion.div
                 whileHover={{ scale: 1.03 }}
@@ -211,12 +201,12 @@ export const ScrollPipelineStory: React.FC = () => {
                     <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80 inline-block" />
                     <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80 inline-block" />
                     <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80 inline-block" />
-                    <span className="font-mono-code text-slate-400 ml-1">https://glyph.dev</span>
+                    <span className="font-mono-code text-slate-400 ml-1">https://rzglyph.dev</span>
                   </div>
                   <span className="font-mono-code text-orange-400 font-bold">NEXT.JS 16 TARGET</span>
                 </div>
                 <div className="space-y-3">
-                  <h4 className="text-xl font-bold text-white">Glyph Compiled Web App</h4>
+                  <h4 className="text-xl font-bold text-white">rzglyph Compiled Web App</h4>
                   <div className="grid grid-cols-2 gap-3 text-xs">
                     <div className="p-3 rounded bg-[#121722] border border-[#232a3b] text-cyan-300 font-mono-code">
                       Typography: Inter + Mono
@@ -238,12 +228,10 @@ export const ScrollPipelineStory: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="relative flex flex-col md:flex-row-reverse items-center gap-8 md:gap-16"
           >
-            {/* Timeline Node Icon */}
             <div className="absolute left-6 md:left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-[#0a0d14] border-2 border-cyan-400 flex items-center justify-center text-cyan-400 z-20 shadow-[0_0_20px_rgba(6,182,212,0.4)]">
               <Layers className="w-5 h-5 animate-spin-slow" />
             </div>
 
-            {/* Right Box (Text Info) */}
             <div className="w-full md:w-1/2 pl-16 md:pl-12 text-left space-y-3">
               <span className="text-xs font-mono-code text-cyan-400 font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-cyan-950/60 border border-cyan-800/40">
                 Stage 04 • Architectural Layers
@@ -254,7 +242,6 @@ export const ScrollPipelineStory: React.FC = () => {
               </p>
             </div>
 
-            {/* Left Box (Interactive Floating 3D Stack View) */}
             <div className="w-full md:w-1/2 pl-16 md:pl-0 md:pr-12">
               <div className="space-y-4 font-mono-code text-xs">
                 <motion.div
@@ -296,7 +283,7 @@ export const ScrollPipelineStory: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* STAGE 05: Core Glyph Emblem Assembly */}
+          {/* STAGE 05: Core Emblem Assembly */}
           <motion.div
             initial={{ opacity: 0, scale: 0.85 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -317,7 +304,7 @@ export const ScrollPipelineStory: React.FC = () => {
                 <CheckCircle className="w-3.5 h-3.5 text-emerald-400" />
                 Stage 05 • Core Synthesis Complete
               </span>
-              <h3 className="text-3xl font-bold text-white tracking-tight">Compilation Pipeline Verified</h3>
+              <h3 className="text-3xl font-bold text-white tracking-tight">rzglyph Core Emblem</h3>
               <p className="text-slate-400 text-sm font-mono-code leading-relaxed">
                 All document routes, layout structures, and component blocks compiled with 100% deterministic execution.
               </p>

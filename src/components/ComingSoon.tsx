@@ -44,11 +44,11 @@ export const ComingSoon: React.FC = () => {
           <div className="space-y-4 max-w-2xl mx-auto">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-950/80 border border-cyan-800/60 text-cyan-400 text-xs font-mono-code">
               <Rocket className="w-3.5 h-3.5 animate-pulse" />
-              <span>GLYPH V2.0 CLOUD ENGINE • ROADMAP</span>
+              <span>RZGLYPH V2.0 CLOUD ENGINE • ROADMAP</span>
             </div>
 
             <h2 className="text-4xl md:text-5xl font-light tracking-tight text-white">
-              Glyph v2.0 &amp; WASM Engine <br />
+              rzglyph v2.0 &amp; WASM Engine <br />
               <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-emerald-400 to-orange-400">
                 Coming Soon
               </span>
@@ -93,7 +93,7 @@ export const ComingSoon: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 className="text-xs font-mono-code text-emerald-400"
               >
-                ✓ You are on the early access list for Glyph v2.0!
+                ✓ You are on the early access list for rzglyph v2.0!
               </motion.p>
             )}
           </form>

@@ -9,7 +9,7 @@ target: "nextjs"
 
 # Aura Engine
 
-Deterministic compiler built for speed and precision.
+Deterministic rzglyph compiler built for speed and precision.
 
 \`\`\`tsx [HeroWidget]
 export function HeroWidget() {
@@ -32,7 +32,7 @@ export function HeroWidget() {
 \`\`\`
 `,
   api: `---
-app_name: "Glyph API Docs"
+app_name: "rzglyph API Docs"
 target: "nextjs"
 ---
 
@@ -192,7 +192,7 @@ export const LiveInteractiveEditor: React.FC = () => {
                 <div className="flex items-center justify-between border-b border-[#232a3b] pb-3">
                   <div className="flex items-center gap-2 text-xs font-mono-code text-cyan-400">
                     <Sparkles className="w-3.5 h-3.5" />
-                    <span>Compiled Preview</span>
+                    <span>rzglyph Synthesized View</span>
                   </div>
                   <span className="text-[10px] font-mono-code px-2 py-0.5 rounded bg-emerald-950 text-emerald-300">
                     Zero JS Bundle

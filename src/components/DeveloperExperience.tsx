@@ -62,17 +62,17 @@ export const DeveloperExperience: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 font-mono-code text-xs pt-2">
             <div className="p-4 rounded bg-[#0a0d14] border border-[#232a3b] space-y-2">
-              <span className="text-cyan-400 font-bold">$ glyph build</span>
+              <span className="text-cyan-400 font-bold">$ rzglyph build</span>
               <p className="text-slate-400 font-sans text-xs">Compiles docs/ directory into dist/ HTML bundle.</p>
             </div>
 
             <div className="p-4 rounded bg-[#0a0d14] border border-[#232a3b] space-y-2">
-              <span className="text-emerald-400 font-bold">$ glyph dev</span>
+              <span className="text-emerald-400 font-bold">$ rzglyph dev</span>
               <p className="text-slate-400 font-sans text-xs">Runs live preview server with instant hot-reloading.</p>
             </div>
 
             <div className="p-4 rounded bg-[#0a0d14] border border-[#232a3b] space-y-2">
-              <span className="text-orange-400 font-bold">$ glyph build-app</span>
+              <span className="text-orange-400 font-bold">$ rzglyph build-app</span>
               <p className="text-slate-400 font-sans text-xs">Transpiles markdown specs to Next.js/Rust/Python web apps.</p>
             </div>
           </div>
