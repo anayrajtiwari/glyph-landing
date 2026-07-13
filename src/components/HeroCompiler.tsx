@@ -54,15 +54,17 @@ export const HeroCompiler: React.FC = () => {
 
   return (
     <section className="relative min-h-[120vh] bg-[#0a0d14] grid-pattern flex flex-col items-center justify-center px-6 py-24 md:py-36 overflow-hidden border-b border-[#232a3b]">
-      {/* Dynamic Animated Background Glow Spheres */}
+      {/* Top-Left Ambient Light Glow Sphere */}
       <motion.div
-        animate={{ scale: [1, 1.25, 1], opacity: [0.15, 0.28, 0.15] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-cyan-500/15 rounded-full blur-[160px] pointer-events-none"
+        animate={{ scale: [1, 1.2, 1], opacity: [0.25, 0.4, 0.25] }}
+        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute -top-20 -left-20 w-[550px] h-[550px] bg-cyan-500/20 rounded-full blur-[160px] pointer-events-none"
       />
+
+      {/* Top-Right & Center Background Glow Spheres */}
       <motion.div
-        animate={{ scale: [1.25, 1, 1.25], opacity: [0.15, 0.3, 0.15] }}
-        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+        animate={{ scale: [1.2, 1, 1.2], opacity: [0.15, 0.3, 0.15] }}
+        transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
         className="absolute top-1/2 right-1/4 w-[550px] h-[550px] bg-orange-500/15 rounded-full blur-[160px] pointer-events-none"
       />
 

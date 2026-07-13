@@ -5,6 +5,7 @@ import { LiveInteractiveEditor } from './components/LiveInteractiveEditor';
 import { PerformanceMetrics } from './components/PerformanceMetrics';
 import { FeaturesArchitecture } from './components/FeaturesArchitecture';
 import { DeveloperExperience } from './components/DeveloperExperience';
+import { ComingSoon } from './components/ComingSoon';
 import { Footer } from './components/Footer';
 
 export function App() {
@@ -17,6 +18,7 @@ export function App() {
       <PerformanceMetrics />
       <FeaturesArchitecture />
       <DeveloperExperience />
+      <ComingSoon />
       <Footer />
     </div>
   );
