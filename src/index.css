@@ -50,26 +50,16 @@
   border-color: rgba(6, 182, 212, 0.4);
 }
 
-/* High-Precision Compiler Bus & Laser Mesh Background (No small square boxes) */
+/* Rich High-Tech Compiler Blueprint Background */
 .compiler-bg {
   background-color: #0a0d14;
   background-image: 
-    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(6, 182, 212, 0.15), transparent),
-    radial-gradient(ellipse 60% 40% at 80% 60%, rgba(249, 115, 22, 0.08), transparent),
-    repeating-linear-gradient(
-      45deg,
-      rgba(255, 255, 255, 0.015) 0px,
-      rgba(255, 255, 255, 0.015) 1px,
-      transparent 1px,
-      transparent 40px
-    ),
-    repeating-linear-gradient(
-      -45deg,
-      rgba(6, 182, 212, 0.012) 0px,
-      rgba(6, 182, 212, 0.012) 1px,
-      transparent 1px,
-      transparent 40px
-    );
+    radial-gradient(ellipse 90% 60% at 50% -10%, rgba(6, 182, 212, 0.22), transparent 70%),
+    radial-gradient(ellipse 70% 50% at 85% 50%, rgba(249, 115, 22, 0.12), transparent 70%),
+    radial-gradient(ellipse 70% 50% at 15% 80%, rgba(16, 185, 129, 0.12), transparent 70%),
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 48px 48px, 48px 48px;
 }
 
 .cursor-blink::after {
