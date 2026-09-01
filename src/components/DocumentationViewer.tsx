@@ -45,20 +45,20 @@ export const DocumentationViewer: React.FC = () => {
           <h3 className="text-xl font-bold text-white pt-4">⚡ Key Performance Pillars</h3>
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-mono-code">
             <li className="p-4 rounded-lg bg-[#0a0d14] border border-[#232a3b] space-y-1">
-              <span className="text-cyan-400 font-bold">&lt; 50ms Compile Times</span>
-              <p className="text-slate-400 font-sans text-xs">Compiles entire documentation folders at V8 execution speeds.</p>
+              <span className="text-cyan-400 font-bold">&lt; 50ms Benchmark Build Times</span>
+              <p className="text-slate-400 font-sans text-xs">Under benchmark conditions, compiles entire documentation directories in milliseconds.</p>
             </li>
             <li className="p-4 rounded-lg bg-[#0a0d14] border border-[#232a3b] space-y-1">
               <span className="text-emerald-400 font-bold">Offline Client Fuzzy Search</span>
-              <p className="text-slate-400 font-sans text-xs">Metadata & token extraction for instant client-side queries.</p>
+              <p className="text-slate-400 font-sans text-xs">Embedded JSON index for fast browser-side search with zero external API calls.</p>
             </li>
             <li className="p-4 rounded-lg bg-[#0a0d14] border border-[#232a3b] space-y-1">
               <span className="text-orange-400 font-bold">Native GitHub Callouts</span>
               <p className="text-slate-400 font-sans text-xs">Supports <code className="text-slate-200">[!NOTE]</code>, <code className="text-slate-200">[!TIP]</code>, <code className="text-slate-200">[!WARNING]</code> blockquotes.</p>
             </li>
             <li className="p-4 rounded-lg bg-[#0a0d14] border border-[#232a3b] space-y-1">
-              <span className="text-purple-400 font-bold">Live Hot-Reloading Dev Server</span>
-              <p className="text-slate-400 font-sans text-xs">Automatic silent re-build on save at localhost:3000.</p>
+              <span className="text-purple-400 font-bold">Live Preview Dev Server</span>
+              <p className="text-slate-400 font-sans text-xs">Automatic local rebuild on file save at localhost:3000.</p>
             </li>
           </ul>
         </div>
@@ -68,22 +68,22 @@ export const DocumentationViewer: React.FC = () => {
       id: 'cli',
       category: 'CLI WORKFLOW',
       title: 'Commands & Dev Preview Server',
-      description: 'Learn how to invoke the Glyph compiler CLI to build production static bundles or launch the hot-reloading dev server.',
+      description: 'Learn how to invoke the Glyph compiler CLI to build production static bundles or launch the local dev server.',
       content: (
         <div className="space-y-6 text-slate-300">
           <p className="leading-relaxed">
-            Glyph ships with a lightweight CLI runner. You can execute commands via <code className="bg-[#181e2b] px-2 py-0.5 rounded text-cyan-300 font-mono-code text-xs">node bin/compiler.js</code> or by installing the global binary.
+            Glyph provides a lightweight CLI. You can execute commands via <code className="bg-[#181e2b] px-2 py-0.5 rounded text-cyan-300 font-mono-code text-xs">glyph build</code> or <code className="bg-[#181e2b] px-2 py-0.5 rounded text-cyan-300 font-mono-code text-xs">glyph dev</code>.
           </p>
 
           <div className="space-y-4">
             <h4 className="text-sm font-mono-code text-cyan-400 font-bold uppercase tracking-wider">1. Production Build Command</h4>
             <div className="p-4 rounded-lg bg-[#0a0d14] border border-[#232a3b] font-mono-code text-xs flex items-center justify-between">
               <div className="space-y-1">
-                <div className="text-slate-100">$ node bin/compiler.js build</div>
+                <div className="text-slate-100">$ glyph build</div>
                 <div className="text-slate-500"># Compiles docs/ directory into production static HTML output inside dist/</div>
               </div>
               <button
-                onClick={() => copyToClipboard('node bin/compiler.js build', 'build')}
+                onClick={() => copyToClipboard('glyph build', 'build')}
                 className="p-2 rounded bg-[#121722] hover:bg-[#181e2b] text-slate-400 hover:text-cyan-400 transition-colors"
               >
                 {copiedCmd === 'build' ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
@@ -93,11 +93,11 @@ export const DocumentationViewer: React.FC = () => {
             <h4 className="text-sm font-mono-code text-emerald-400 font-bold uppercase tracking-wider pt-2">2. Local Preview Dev Server</h4>
             <div className="p-4 rounded-lg bg-[#0a0d14] border border-[#232a3b] font-mono-code text-xs flex items-center justify-between">
               <div className="space-y-1">
-                <div className="text-slate-100">$ node bin/compiler.js dev 3000</div>
-                <div className="text-slate-500"># Launches HTTP server at http://localhost:3000 with file watcher hot-reloading</div>
+                <div className="text-slate-100">$ glyph dev</div>
+                <div className="text-slate-500"># Launches HTTP preview server at http://localhost:3000 with auto-reload</div>
               </div>
               <button
-                onClick={() => copyToClipboard('node bin/compiler.js dev 3000', 'dev')}
+                onClick={() => copyToClipboard('glyph dev', 'dev')}
                 className="p-2 rounded bg-[#121722] hover:bg-[#181e2b] text-slate-400 hover:text-cyan-400 transition-colors"
               >
                 {copiedCmd === 'dev' ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}

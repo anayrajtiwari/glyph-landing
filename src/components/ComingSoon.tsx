@@ -44,18 +44,18 @@ export const ComingSoon: React.FC = () => {
           <div className="space-y-4 max-w-2xl mx-auto">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-950/80 border border-cyan-800/60 text-cyan-400 text-xs font-mono-code">
               <Rocket className="w-3.5 h-3.5 animate-pulse" />
-              <span>RZGLYPH V2.0 CLOUD ENGINE • ROADMAP</span>
+              <span>GLYPH ECOSYSTEM ROADMAP</span>
             </div>
 
             <h2 className="text-4xl md:text-5xl font-light tracking-tight text-white">
-              rzglyph v2.0 &amp; WASM Engine <br />
+              Glyph v2.0 <br />
               <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-emerald-400 to-orange-400">
                 Coming Soon
               </span>
             </h2>
 
             <p className="text-slate-400 text-base font-light leading-relaxed">
-              Native WebAssembly browser compilation target, real-time multi-user spec editing, and one-click edge deployment to Vercel and Netlify.
+              Browser-based compilation targets, enhanced interactive component previews, and automated deployment integrations.
             </p>
           </div>
 

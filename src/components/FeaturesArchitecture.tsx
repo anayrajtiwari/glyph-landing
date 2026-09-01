@@ -36,7 +36,7 @@ export const FeaturesArchitecture: React.FC = () => {
               Extracts YAML frontmatter, fenced code syntax, layout components, and blockquote alerts (`[!NOTE]`, `[!TIP]`) in a unified execution stream.
             </p>
             <div className="p-3 rounded bg-[#0a0d14] border border-[#232a3b] font-mono-code text-xs text-cyan-300">
-              $ glyph parse docs/spec.md --ast
+              $ glyph check
             </div>
           </motion.div>
 
@@ -55,7 +55,7 @@ export const FeaturesArchitecture: React.FC = () => {
               Emits standalone static HTML, custom CSS tokens, page-to-page pagers, and responsive glassmorphic navigation structures.
             </p>
             <div className="p-3 rounded bg-[#0a0d14] border border-[#232a3b] font-mono-code text-xs text-emerald-300">
-              $ node bin/compiler.js build
+              $ glyph build
             </div>
           </motion.div>
 
@@ -71,10 +71,10 @@ export const FeaturesArchitecture: React.FC = () => {
             </div>
             <h3 className="text-xl font-bold text-white">Client-Side Search Indexer</h3>
             <p className="text-slate-400 text-sm font-light leading-relaxed">
-              Generates a zero-cost local fuzzy search index on-the-fly, giving users instant search queries without requiring external search APIs like Algolia.
+              Generates a zero-cost local fuzzy search index on-the-fly, giving users instant search queries without requiring external search APIs.
             </p>
             <div className="p-3 rounded bg-[#0a0d14] border border-[#232a3b] font-mono-code text-xs text-orange-300">
-              [Search] Generated index: 1,420 tokens (&lt; 1ms)
+              [Search] Generated index: search-index.json (&lt; 2ms)
             </div>
           </motion.div>
 
@@ -93,7 +93,7 @@ export const FeaturesArchitecture: React.FC = () => {
               Supports native GitHub-style blockquotes (`[!NOTE]`, `[!TIP]`, `[!WARNING]`, `[!IMPORTANT]`) rendered directly as modern styled callout cards.
             </p>
             <div className="p-3 rounded bg-[#0a0d14] border border-[#232a3b] font-mono-code text-xs text-cyan-300">
-              $ node bin/compiler.js dev 3000
+              $ glyph dev
             </div>
           </motion.div>
 

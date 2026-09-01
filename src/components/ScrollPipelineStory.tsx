@@ -154,11 +154,11 @@ export const ScrollPipelineStory: React.FC = () => {
 
             <div className="w-full md:w-1/2 pl-16 md:pl-0 md:pr-12 text-left md:text-right space-y-3">
               <span className="text-xs font-mono-code text-orange-400 font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-orange-950/60 border border-orange-800/40">
-                Stage 03 • Target Emitter
+                Stage 03 • Static Output Emitter
               </span>
-              <h3 className="text-2xl font-bold text-white">Browser Framework Assembly</h3>
+              <h3 className="text-2xl font-bold text-white">Static Portal Assembly</h3>
               <p className="text-slate-400 text-sm leading-relaxed font-light">
-                Emits production Next.js 16/26, Rust Axum, or Python FastAPI applications complete with Tailwind CSS v4 layout systems and client-side search.
+                Emits production-ready static HTML pages, modular CSS styling, local fuzzy search index bundles, and exportable React TSX components.
               </p>
             </div>
 
@@ -169,18 +169,18 @@ export const ScrollPipelineStory: React.FC = () => {
                     <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80 inline-block" />
                     <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80 inline-block" />
                     <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80 inline-block" />
-                    <span className="font-mono-code text-slate-400 ml-1">https://rzglyph.dev</span>
+                    <span className="font-mono-code text-slate-400 ml-1">https://rzglyph.shri.org.in</span>
                   </div>
-                  <span className="font-mono-code text-orange-400 font-bold">NEXT.JS 16 TARGET</span>
+                  <span className="font-mono-code text-orange-400 font-bold">STATIC OUTPUT</span>
                 </div>
                 <div className="space-y-3">
-                  <h4 className="text-xl font-bold text-white">rzglyph Compiled Web App</h4>
+                  <h4 className="text-xl font-bold text-white">Glyph Documentation Hub</h4>
                   <div className="grid grid-cols-2 gap-3 text-xs">
                     <div className="p-3 rounded bg-[#121722] border border-[#232a3b] text-cyan-300 font-mono-code">
-                      Typography: Inter + Mono
+                      Static HTML + CSS
                     </div>
                     <div className="p-3 rounded bg-[#121722] border border-[#232a3b] text-emerald-300 font-mono-code">
-                      Tailwind CSS v4
+                      Fuzzy Search Index
                     </div>
                   </div>
                 </div>

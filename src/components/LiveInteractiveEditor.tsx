@@ -33,10 +33,10 @@ Run the documentation pipeline locally:
 
 \`\`\`bash
 # Build production static documentation hub
-node bin/compiler.js build
+glyph build
 
 # Launch dev preview server at localhost:3000
-node bin/compiler.js dev 3000
+glyph dev
 \`\`\`
 `,
   spec: `---
@@ -54,7 +54,7 @@ Every documentation file should start with YAML frontmatter.
 \`\`\`yaml
 ---
 title: "Architecture & Design"
-description: "High performance V8 lexing mechanics."
+description: "Lightweight local documentation compiler."
 order: 3
 ---
 \`\`\`
@@ -95,7 +95,7 @@ export const LiveInteractiveEditor: React.FC = () => {
               Markdown &rarr; Interactive Doc Hub
             </h2>
             <p className="text-slate-400 text-sm font-light">
-              Edit Markdown &amp; callouts on the left; preview the instantly compiled developer hub on the right.
+              Edit Markdown &amp; callouts on the left; preview the compiled static hub on the right.
             </p>
           </div>
 
@@ -114,7 +114,7 @@ export const LiveInteractiveEditor: React.FC = () => {
                 activeTab === 'api' ? 'bg-cyan-500 text-slate-950 font-bold' : 'text-slate-400 hover:text-slate-200'
               }`}
             >
-              API Docs
+              CLI Guide
             </button>
             <button
               onClick={() => handleSelectSample('spec')}
@@ -122,7 +122,7 @@ export const LiveInteractiveEditor: React.FC = () => {
                 activeTab === 'spec' ? 'bg-cyan-500 text-slate-950 font-bold' : 'text-slate-400 hover:text-slate-200'
               }`}
             >
-              Rust Spec
+              Frontmatter
             </button>
           </div>
         </div>
@@ -155,7 +155,7 @@ export const LiveInteractiveEditor: React.FC = () => {
             <div className="px-4 py-3 bg-[#0a0d14] border-b border-[#232a3b] flex items-center justify-between font-mono-code text-xs text-slate-400">
               <div className="flex items-center gap-2">
                 <Eye className="w-4 h-4 text-emerald-400" />
-                <span>Live Synthesized View</span>
+                <span>Compiled Static Preview</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
@@ -168,10 +168,10 @@ export const LiveInteractiveEditor: React.FC = () => {
                 <div className="flex items-center justify-between border-b border-[#232a3b] pb-3">
                   <div className="flex items-center gap-2 text-xs font-mono-code text-cyan-400">
                     <Sparkles className="w-3.5 h-3.5" />
-                    <span>rzglyph Synthesized View</span>
+                    <span>Compiled Preview</span>
                   </div>
                   <span className="text-[10px] font-mono-code px-2 py-0.5 rounded bg-emerald-950 text-emerald-300">
-                    Zero JS Bundle
+                    Clean Static Output
                   </span>
                 </div>
 
