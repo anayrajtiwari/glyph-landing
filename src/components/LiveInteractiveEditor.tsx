@@ -3,84 +3,60 @@ import { Code, Eye, Sparkles, Zap } from 'lucide-react';
 
 const SAMPLES = {
   landing: `---
-app_name: "Aura Core"
-target: "nextjs"
+title: "Getting Started"
+order: 1
 ---
 
-# Aura Engine
+# Introduction 🌀
 
-Deterministic rzglyph compiler built for speed and precision.
+Welcome to **Glyph**, a zero-dependency documentation compiler.
 
-\`\`\`tsx [HeroWidget]
-export function HeroWidget() {
-  return (
-    <div className="card">
-      <h2>🚀 Zero Latency Architecture</h2>
-      <p>Compiled in under 5ms.</p>
-    </div>
-  );
-}
-\`\`\`
+> [!NOTE]
+> This portal was built in < 15ms directly from raw Markdown files!
 
-\`\`\`css (theme.css)
-.card {
-  background: #121722;
-  border: 1px solid #06b6d4;
-  padding: 1.5rem;
-  border-radius: 12px;
-}
-\`\`\`
+## ⚡ Key Features
+* Zero dependencies: Pure JS engine.
+* Embedded client-side fuzzy search.
+* GitHub callout blockquote cards.
 `,
   api: `---
-app_name: "rzglyph API Docs"
-target: "nextjs"
+title: "CLI Reference"
+order: 2
 ---
 
-# API Reference
+# CLI Commands 🛠️
 
-Fast, lightweight REST & GraphQL endpoints.
+Run the documentation pipeline locally:
 
-\`\`\`tsx [EndpointCard]
-export function EndpointCard() {
-  return (
-    <div className="endpoint">
-      <span className="method">POST</span>
-      <code>/v1/compile</code>
-    </div>
-  );
-}
-\`\`\`
+> [!TIP]
+> Use the preview server to hot-reload edits instantly on save!
 
-\`\`\`css (api.css)
-.endpoint {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  background: #181e2b;
-  padding: 1rem;
-}
-.method {
-  background: #10b981;
-  color: #0a0d14;
-  padding: 0.2rem 0.6rem;
-  border-radius: 4px;
-  font-weight: bold;
-}
+\`\`\`bash
+# Build production static documentation hub
+node bin/compiler.js build
+
+# Launch dev preview server at localhost:3000
+node bin/compiler.js dev 3000
 \`\`\`
 `,
   spec: `---
-app_name: "System Spec"
-target: "rust"
+title: "Frontmatter Config"
+order: 3
 ---
 
-# Architecture Specification
+# Page Metadata ⚙️
 
-Multi-target compiler lowerer & IR generator.
+Every documentation file should start with YAML frontmatter.
 
-\`\`\`rs (server)
-fn main() {
-    println!("Server running on 127.0.0.1:3000");
-}
+> [!WARNING]
+> Ensure ordering numbers are integers to keep sidebar navigation sorted!
+
+\`\`\`yaml
+---
+title: "Architecture & Design"
+description: "High performance V8 lexing mechanics."
+order: 3
+---
 \`\`\`
 `
 };
@@ -101,8 +77,8 @@ export const LiveInteractiveEditor: React.FC = () => {
     setCompileTime(Number((Math.random() * 2 + 1.5).toFixed(1)));
   };
 
-  const extractedTitle = markdown.match(/#\s+(.*)/)?.[1] || 'Compiled Web App';
-  const extractedParagraph = markdown.match(/#\s+.*\n+([^`\n]+)/)?.[1] || 'Live preview synthesized from markdown.';
+  const extractedTitle = markdown.match(/#\s+(.*)/)?.[1] || 'Compiled Documentation Page';
+  const extractedParagraph = markdown.match(/#\s+.*\n+([^`\n]+)/)?.[1] || 'Live documentation preview synthesized from Markdown.';
   const extractedCodeSnippet = markdown.match(/```[\s\S]*?\n([\s\S]*?)```/)?.[1] || '';
 
   return (
@@ -116,10 +92,10 @@ export const LiveInteractiveEditor: React.FC = () => {
               <span>LIVE INSTANT PLAYGROUND</span>
             </div>
             <h2 className="text-3xl md:text-5xl font-light tracking-tight text-white">
-              Markdown &rarr; Live Webpage Editor
+              Markdown &rarr; Interactive Doc Hub
             </h2>
             <p className="text-slate-400 text-sm font-light">
-              Type Markdown instructions on the left; see instant rendered web applications on the right.
+              Edit Markdown &amp; callouts on the left; preview the instantly compiled developer hub on the right.
             </p>
           </div>
 

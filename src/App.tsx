@@ -1,5 +1,6 @@
 import { Navbar } from './components/Navbar';
 import { HeroCompiler } from './components/HeroCompiler';
+import { DocumentationViewer } from './components/DocumentationViewer';
 import { ScrollPipelineStory } from './components/ScrollPipelineStory';
 import { LiveInteractiveEditor } from './components/LiveInteractiveEditor';
 import { PerformanceMetrics } from './components/PerformanceMetrics';
@@ -11,10 +12,11 @@ import { BackgroundCircuit } from './components/BackgroundCircuit';
 
 export function App() {
   return (
-    <div className="min-h-screen bg-[#0a0d14] text-slate-100 selection:bg-cyan-500/30 selection:text-cyan-200 relative">
+    <div className="min-h-screen compiler-bg text-slate-100 selection:bg-cyan-500/30 selection:text-cyan-200 relative">
       <BackgroundCircuit />
       <Navbar />
       <HeroCompiler />
+      <DocumentationViewer />
       <ScrollPipelineStory />
       <LiveInteractiveEditor />
       <PerformanceMetrics />

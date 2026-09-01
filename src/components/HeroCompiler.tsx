@@ -6,7 +6,7 @@ import { GlyphLogo } from './GlyphLogo';
 export const HeroCompiler: React.FC = () => {
   const [step, setStep] = useState<number>(0);
   const [typedText, setTypedText] = useState('');
-  const fullCommand = 'rzglyph build';
+  const fullCommand = 'node bin/compiler.js build';
 
   useEffect(() => {
     const timer1 = setTimeout(() => {
@@ -19,7 +19,7 @@ export const HeroCompiler: React.FC = () => {
           clearInterval(typeInterval);
           setTimeout(() => setStep(2), 500);
         }
-      }, 70);
+      }, 50);
     }, 400);
 
     return () => clearTimeout(timer1);
@@ -48,7 +48,7 @@ export const HeroCompiler: React.FC = () => {
           clearInterval(typeInterval);
           setTimeout(() => setStep(2), 400);
         }
-      }, 60);
+      }, 50);
     }, 200);
   };
 
@@ -85,7 +85,7 @@ export const HeroCompiler: React.FC = () => {
               <span className="w-3 h-3 rounded-full bg-emerald-500/80 inline-block" />
               <span className="ml-2 text-xs font-mono-code text-slate-400 flex items-center gap-2">
                 <TerminalIcon className="w-3.5 h-3.5 text-cyan-400" />
-                rzglyph-compiler v1.4.2 — compilation-pipeline
+                glyph-compiler v1.0.0 — doc-pipeline
               </span>
             </div>
 
@@ -93,9 +93,9 @@ export const HeroCompiler: React.FC = () => {
               <span className="text-[11px] font-mono-code text-cyan-400 font-semibold tracking-wider">
                 {step === 0 && 'STATUS: IDLE'}
                 {step === 1 && 'STATUS: TYPING'}
-                {step === 2 && 'STATUS: LEXING AST (< 2ms)'}
-                {step === 3 && 'STATUS: SYNTHESIZING COMPONENTS'}
-                {step === 4 && 'STATUS: COMPILED READY (< 8ms)'}
+                {step === 2 && 'STATUS: LEXING MARKDOWN (< 2ms)'}
+                {step === 3 && 'STATUS: INDEXING FUZZY SEARCH'}
+                {step === 4 && 'STATUS: COMPILED READY (< 12ms)'}
               </span>
               <button
                 onClick={restartDemo}
@@ -133,9 +133,9 @@ export const HeroCompiler: React.FC = () => {
                   className="space-y-4 font-mono-code text-base"
                 >
                   <div className="flex items-center gap-2 text-slate-400">
-                    <span className="text-emerald-400">dev@rzglyph-compiler</span>
+                    <span className="text-emerald-400">dev@glyph-compiler</span>
                     <span className="text-slate-600">:</span>
-                    <span className="text-cyan-400">~/project</span>
+                    <span className="text-cyan-400">~/my-doc-repo</span>
                     <span className="text-slate-500">$</span>
                     <span className="text-slate-100 font-bold text-lg">{typedText}</span>
                     <span className="cursor-blink text-cyan-400 font-bold" />
@@ -146,7 +146,7 @@ export const HeroCompiler: React.FC = () => {
                       animate={{ opacity: 1 }}
                       className="text-xs text-slate-500 italic pt-3"
                     >
-                      [Info] Compiling docs/spec.md into standalone Next.js 16/26 frontend target...
+                      [Info] Compiling docs/ directory into static documentation hub + client-side search index...
                     </motion.p>
                   )}
                 </motion.div>
@@ -164,7 +164,7 @@ export const HeroCompiler: React.FC = () => {
                 >
                   <div className="flex items-center gap-2 text-xs text-cyan-400 border-b border-cyan-950/60 pb-2">
                     <Cpu className="w-4 h-4 animate-pulse" />
-                    <span>PARSING MARKDOWN SPECIFICATION INTO ABSTRACT SYNTAX TREE</span>
+                    <span>PARSING MARKDOWN SPECIFICATION & FRONTMATTER METADATA</span>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
                     <motion.div
@@ -172,11 +172,11 @@ export const HeroCompiler: React.FC = () => {
                       animate={{ x: 0, opacity: 1 }}
                       className="p-5 rounded bg-[#0a0d14] border border-[#232a3b] text-slate-300 space-y-2"
                     >
-                      <div className="text-orange-400 font-bold text-sm"># Input Spec (docs/index.md)</div>
-                      <div className="text-slate-400">--- title: &quot;rzglyph Engine&quot; ---</div>
-                      <div className="text-emerald-400"># Next-Gen Compiler</div>
-                      <div className="text-cyan-300">```tsx [HeaderComponent]</div>
-                      <div className="text-slate-500">export function Header() &#123; ... &#125;</div>
+                      <div className="text-orange-400 font-bold text-sm"># Input Markdown (docs/getting-started.md)</div>
+                      <div className="text-slate-400">--- title: &quot;Getting Started&quot; order: 1 ---</div>
+                      <div className="text-emerald-400"># Quick Start Guide</div>
+                      <div className="text-cyan-300">&gt; [!NOTE] Native Callout Alerts</div>
+                      <div className="text-slate-500">Zero dependencies. Instant static HTML output.</div>
                     </motion.div>
 
                     <motion.div
@@ -185,17 +185,17 @@ export const HeroCompiler: React.FC = () => {
                       transition={{ delay: 0.15 }}
                       className="p-5 rounded bg-[#0a0d14] border border-[#232a3b] text-slate-300 space-y-2"
                     >
-                      <div className="text-cyan-400 font-bold text-sm"># Unified AST IR Output</div>
-                      <div className="text-slate-400">AST_Program &#123; routes: 3, components: 4 &#125;</div>
-                      <div className="text-emerald-400">IR_Lowerer :: Synthesizing Next.js 16/26</div>
-                      <div className="text-orange-300">Emitting x86-64 / React 19 / Tailwind v4...</div>
-                      <div className="text-slate-500">Target: Next.js 16/26 App Router</div>
+                      <div className="text-cyan-400 font-bold text-sm"># Compiler Pipeline AST</div>
+                      <div className="text-slate-400">MarkdownAST &#123; pages: 12, tokens: 4,820 &#125;</div>
+                      <div className="text-emerald-400">FrontmatterParser :: Extracted metadata &amp; nav order</div>
+                      <div className="text-orange-300">CodeHighlighter :: Styled 18 code blocks</div>
+                      <div className="text-slate-500">Output Target: dist/ (Static Production Assets)</div>
                     </motion.div>
                   </div>
                 </motion.div>
               )}
 
-              {/* STAGE 3: Component Morphing */}
+              {/* STAGE 3: Search Indexing & Assets Synthesis */}
               {step === 3 && (
                 <motion.div
                   key="stage-3"
@@ -207,7 +207,7 @@ export const HeroCompiler: React.FC = () => {
                 >
                   <div className="flex items-center gap-2 text-xs font-mono-code text-orange-400 border-b border-orange-950/60 pb-2">
                     <Layers className="w-4 h-4 animate-bounce" />
-                    <span>MORPHING TEXT TO REACT COMPONENTS &amp; LAYOUT FRAMES</span>
+                    <span>SYNTHESIZING SEARCH INDEX &amp; LIGHTWEIGHT HTML/CSS PAGES</span>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <motion.div
@@ -218,7 +218,7 @@ export const HeroCompiler: React.FC = () => {
                     >
                       <div className="h-4 bg-cyan-950 rounded w-3/4 mx-auto animate-pulse" />
                       <div className="h-3 bg-slate-800 rounded w-1/2 mx-auto" />
-                      <span className="text-[11px] font-mono-code text-cyan-400 block">HeaderComponent.tsx</span>
+                      <span className="text-[11px] font-mono-code text-cyan-400 block">search-index.json</span>
                     </motion.div>
 
                     <motion.div
@@ -229,7 +229,7 @@ export const HeroCompiler: React.FC = () => {
                     >
                       <div className="h-4 bg-emerald-950 rounded w-3/4 mx-auto animate-pulse" />
                       <div className="h-3 bg-slate-800 rounded w-1/2 mx-auto" />
-                      <span className="text-[11px] font-mono-code text-emerald-400 block">FeatureGrid.tsx</span>
+                      <span className="text-[11px] font-mono-code text-emerald-400 block">getting-started.html</span>
                     </motion.div>
 
                     <motion.div
@@ -240,13 +240,13 @@ export const HeroCompiler: React.FC = () => {
                     >
                       <div className="h-4 bg-orange-950 rounded w-3/4 mx-auto animate-pulse" />
                       <div className="h-3 bg-slate-800 rounded w-1/2 mx-auto" />
-                      <span className="text-[11px] font-mono-code text-orange-400 block">InteractiveConsole.tsx</span>
+                      <span className="text-[11px] font-mono-code text-orange-400 block">app.css (Glow Dark Theme)</span>
                     </motion.div>
                   </div>
                 </motion.div>
               )}
 
-              {/* STAGE 4: Final Rendered Website Slide Forward */}
+              {/* STAGE 4: Final Rendered Website Preview */}
               {step === 4 && (
                 <motion.div
                   key="stage-4"
@@ -258,37 +258,37 @@ export const HeroCompiler: React.FC = () => {
                   <div className="flex items-center justify-between border-b border-[#232a3b] pb-4">
                     <div className="flex items-center gap-3">
                       <GlyphLogo size={28} glow />
-                      <span className="font-bold text-base text-slate-100">rzglyph Compiled Preview</span>
+                      <span className="font-bold text-base text-slate-100">Glyph Documentation Preview</span>
                     </div>
                     <span className="text-xs font-mono-code text-emerald-400 flex items-center gap-1 font-semibold">
-                      <Check className="w-4 h-4" /> Compiled in 7.4ms
+                      <Check className="w-4 h-4" /> Compiled in 11.2ms
                     </span>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                     <div className="space-y-4">
                       <span className="text-xs font-mono-code text-orange-400 uppercase tracking-widest px-2.5 py-1 rounded bg-orange-950/60 border border-orange-800/40">
-                        Zero-JS Hydration
+                        Zero Dependency Engine
                       </span>
                       <h4 className="text-3xl font-bold tracking-tight text-white">
-                        Next.js 16/26 Markdown Compiler
+                        Instant Static Output
                       </h4>
                       <p className="text-sm text-slate-400 leading-relaxed font-light">
-                        Transforming raw documentation specs into Next.js 16/26 frontend interfaces with React 19, Tailwind v4, and native client-side search.
+                        Transform raw Markdown into responsive developer portals complete with client-side fuzzy search and zero external search index dependencies.
                       </p>
                     </div>
                     <div className="p-5 rounded-lg bg-[#121722] border border-[#232a3b] space-y-3 text-xs font-mono-code">
                       <div className="flex justify-between text-slate-400">
-                        <span>Target Framework:</span>
-                        <span className="text-cyan-400 font-bold">Next.js 16 / React 19</span>
+                        <span>Target Output:</span>
+                        <span className="text-cyan-400 font-bold">Static HTML / CSS / JS</span>
                       </div>
                       <div className="flex justify-between text-slate-400">
-                        <span>Bundle Size:</span>
-                        <span className="text-emerald-400 font-bold">0 KB Overhead</span>
+                        <span>Client Search:</span>
+                        <span className="text-emerald-400 font-bold">Embedded Fuzzy Index</span>
                       </div>
                       <div className="flex justify-between text-slate-400">
                         <span>Compilation Speed:</span>
-                        <span className="text-orange-400 font-bold">&lt; 10ms Build</span>
+                        <span className="text-orange-400 font-bold">&lt; 15ms Build</span>
                       </div>
                     </div>
                   </div>
@@ -309,7 +309,7 @@ export const HeroCompiler: React.FC = () => {
           <div className="p-4 rounded-lg bg-[#121722] border border-[#232a3b] flex items-center gap-3">
             <Zap className="w-5 h-5 text-cyan-400 flex-shrink-0" />
             <div>
-              <div className="text-slate-200 font-bold">Single-Pass Lexer</div>
+              <div className="text-slate-200 font-bold">Sub-50ms Compiler</div>
               <div className="text-slate-500 text-[11px]">Direct AST parsing in &lt; 2ms</div>
             </div>
           </div>
@@ -317,8 +317,8 @@ export const HeroCompiler: React.FC = () => {
           <div className="p-4 rounded-lg bg-[#121722] border border-[#232a3b] flex items-center gap-3">
             <Server className="w-5 h-5 text-emerald-400 flex-shrink-0" />
             <div>
-              <div className="text-slate-200 font-bold">Next.js 16/26 Engine</div>
-              <div className="text-slate-500 text-[11px]">Emits Next.js 16/26 + React 19</div>
+              <div className="text-slate-200 font-bold">Hot-Reload Dev Server</div>
+              <div className="text-slate-500 text-[11px]">Instant browser update on save</div>
             </div>
           </div>
 
@@ -326,7 +326,7 @@ export const HeroCompiler: React.FC = () => {
             <ShieldCheck className="w-5 h-5 text-orange-400 flex-shrink-0" />
             <div>
               <div className="text-slate-200 font-bold">Zero Dependency</div>
-              <div className="text-slate-500 text-[11px]">No external cloud JS runtimes</div>
+              <div className="text-slate-500 text-[11px]">Pure JS runtime execution</div>
             </div>
           </div>
         </motion.div>
@@ -339,15 +339,16 @@ export const HeroCompiler: React.FC = () => {
         transition={{ duration: 0.9, delay: 0.3 }}
         className="max-w-4xl mx-auto text-center space-y-8 z-10 pt-6"
       >
+        {/* Main Headline & Subheadline */}
         <h1 className="text-5xl md:text-7xl font-light tracking-tight leading-none text-slate-100">
-          Build Beautiful Websites <br />
+          The Zero-Dependency <br />
           <span className="font-normal text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-emerald-400 to-orange-400">
-            From Markdown
+            Documentation Engine
           </span>
         </h1>
 
         <p className="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
-          A deterministic compiler that transforms documentation into production-ready frontend experiences.
+          A fast, local, offline MDX documentation compiler developed by Shri Hari Redirect Initiative (SHRI). Under project benchmark conditions, Glyph compiles Markdown and MDX directories into clean static developer hubs in under 50ms.
         </p>
 
         {/* CTA Buttons */}
@@ -375,7 +376,7 @@ export const HeroCompiler: React.FC = () => {
           <motion.a
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            href="https://github.com/google/agents-cli"
+            href="https://github.com/anayrajtiwari/glyph-cli"
             target="_blank"
             rel="noreferrer"
             className="px-8 py-4 rounded-md bg-[#121722] hover:bg-[#181e2b] border border-[#232a3b] hover:border-slate-500 text-slate-300 font-mono-code text-sm tracking-wide flex items-center gap-2 transition-all"

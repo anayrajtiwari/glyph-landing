@@ -17,7 +17,7 @@ export const PerformanceMetrics: React.FC = () => {
             Engineered For Speed &amp; Precision
           </h2>
           <p className="text-slate-400 text-base font-light">
-            Zero JS runtime overhead. Direct V8/Rust parser execution. Unmatched build times.
+            Zero external dependencies. Direct V8 compiler execution. Clean static output.
           </p>
         </div>
 
@@ -37,9 +37,9 @@ export const PerformanceMetrics: React.FC = () => {
             </div>
             <div>
               <div className="text-5xl font-extrabold font-mono-code text-cyan-400">&lt; 12ms</div>
-              <div className="text-slate-200 font-bold text-sm pt-2">Compile Time</div>
+              <div className="text-slate-200 font-bold text-sm pt-2">Benchmark Compile Time</div>
               <p className="text-slate-400 text-xs font-light pt-1 leading-relaxed">
-                Parses, lowers AST, and emits production bundles in milliseconds.
+                Under benchmark conditions, parses AST and emits static pages in milliseconds.
               </p>
             </div>
           </motion.div>

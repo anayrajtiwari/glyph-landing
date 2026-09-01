@@ -50,12 +50,12 @@ export const FeaturesArchitecture: React.FC = () => {
             <div className="w-10 h-10 rounded-lg bg-emerald-950 border border-emerald-800/60 flex items-center justify-center text-emerald-400">
               <Layers className="w-5 h-5" />
             </div>
-            <h3 className="text-xl font-bold text-white">Polyglot Target Generator</h3>
+            <h3 className="text-xl font-bold text-white">Static Output Generator</h3>
             <p className="text-slate-400 text-sm font-light leading-relaxed">
-              Emits clean React TSX components for Next.js, async routes for Rust (Axum), or endpoints for Python (FastAPI).
+              Emits standalone static HTML, custom CSS tokens, page-to-page pagers, and responsive glassmorphic navigation structures.
             </p>
             <div className="p-3 rounded bg-[#0a0d14] border border-[#232a3b] font-mono-code text-xs text-emerald-300">
-              $ glyph build-app spec.md --target nextjs
+              $ node bin/compiler.js build
             </div>
           </motion.div>
 
@@ -88,12 +88,12 @@ export const FeaturesArchitecture: React.FC = () => {
             <div className="w-10 h-10 rounded-lg bg-cyan-950 border border-cyan-800/60 flex items-center justify-center text-cyan-400">
               <TerminalSquare className="w-5 h-5" />
             </div>
-            <h3 className="text-xl font-bold text-white">Live Code &amp; Assembly Viewer</h3>
+            <h3 className="text-xl font-bold text-white">Callout Alerts &amp; Syntax Engine</h3>
             <p className="text-slate-400 text-sm font-light leading-relaxed">
-              Executes C, Rust, Python, TSX code blocks natively and renders inspectable x86-64 assembly instructions directly inside generated docs.
+              Supports native GitHub-style blockquotes (`[!NOTE]`, `[!TIP]`, `[!WARNING]`, `[!IMPORTANT]`) rendered directly as modern styled callout cards.
             </p>
             <div className="p-3 rounded bg-[#0a0d14] border border-[#232a3b] font-mono-code text-xs text-cyan-300">
-              MULTIC_KEEP_ASM=1 glyph dev
+              $ node bin/compiler.js dev 3000
             </div>
           </motion.div>
 

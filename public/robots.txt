@@ -1,0 +1,5 @@
+# /robots.txt for https://rzglyph.shri.org.in
+User-agent: *
+Allow: /
+
+Sitemap: https://rzglyph.shri.org.in/sitemap.xml

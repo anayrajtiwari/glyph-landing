@@ -22,9 +22,9 @@ export const Navbar: React.FC = () => {
           <a href="#" className="flex items-center gap-3 p-1.5 px-3 rounded-lg bg-[#121722]/80 border border-[#232a3b] hover:border-cyan-500/40 transition-all shadow-lg group">
             <GlyphLogo size={28} glow />
             <div className="flex items-center gap-2">
-              <span className="font-mono-code font-bold text-lg tracking-tight text-white group-hover:text-cyan-400 transition-colors">rzglyph</span>
+              <span className="font-mono-code font-bold text-lg tracking-tight text-white group-hover:text-cyan-400 transition-colors">Glyph</span>
               <span className="text-[10px] font-mono-code uppercase px-2 py-0.5 rounded bg-cyan-950/90 border border-cyan-800/60 text-cyan-400 font-bold">
-                v1.4.2
+                v1.0.0
               </span>
             </div>
           </a>
@@ -32,12 +32,13 @@ export const Navbar: React.FC = () => {
           {/* Top-Left Compiler Engine Status Tag */}
           <div className="hidden lg:flex items-center gap-2 px-3 py-1 rounded-full bg-[#121722] border border-[#232a3b] text-xs font-mono-code text-slate-400">
             <Cpu className="w-3.5 h-3.5 text-cyan-400 animate-pulse" />
-            <span>Next.js 16 Compiler Engine</span>
+            <span>Doc Compiler Engine</span>
           </div>
         </div>
 
         {/* Navigation Links */}
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
+          <a href="#docs" className="hover:text-cyan-400 transition-colors text-cyan-400 font-semibold">Docs</a>
           <a href="#pipeline" className="hover:text-cyan-400 transition-colors">Pipeline</a>
           <a href="#editor" className="hover:text-cyan-400 transition-colors">Live Editor</a>
           <a href="#performance" className="hover:text-cyan-400 transition-colors">Performance</a>
@@ -46,6 +47,17 @@ export const Navbar: React.FC = () => {
 
         {/* Action Buttons */}
         <div className="flex items-center gap-3">
+          <a
+            href="https://shri.org.in"
+            target="_blank"
+            rel="noreferrer"
+            className="hidden xl:flex items-center gap-1 px-3 py-1.5 rounded bg-[#121722] border border-[#232a3b] hover:border-cyan-500/40 text-xs font-mono-code text-slate-400 hover:text-cyan-300 transition-all"
+            title="Shri Hari Redirect Initiative"
+          >
+            <span>SHRI Ecosystem</span>
+            <ArrowUpRight className="w-3 h-3 text-cyan-500" />
+          </a>
+
           <button
             onClick={copyInstallCmd}
             className="hidden sm:flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-[#121722] border border-[#232a3b] hover:border-cyan-500/50 text-xs font-mono-code text-slate-300 transition-all shadow-md"
@@ -57,7 +69,7 @@ export const Navbar: React.FC = () => {
           </button>
 
           <a
-            href="https://github.com/google/agents-cli"
+            href="https://github.com/anayrajtiwari/glyph-cli"
             target="_blank"
             rel="noreferrer"
             className="flex items-center gap-2 px-4 py-1.5 rounded-md bg-cyan-950/50 border border-cyan-500/40 hover:border-cyan-400 text-cyan-300 hover:text-cyan-200 text-xs font-mono-code tracking-wide transition-all shadow-md"
